@@ -2,7 +2,7 @@ package to.dev.example
 
 import io.dropwizard.Application
 import io.dropwizard.setup.Environment
-import to.dev.example.configuration.CalculatorConfig
+import to.dev.example.configuration.MoviesConfig
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.QueryParam
@@ -39,8 +39,8 @@ class CalculatorComponent {
 
 }
 
-class CalculatorApp : Application<CalculatorConfig>() {
-    override fun run(configuration: CalculatorConfig, environment: Environment) {
+class CalculatorApp : Application<MoviesConfig>() {
+    override fun run(configuration: MoviesConfig, environment: Environment) {
         println("Running ${configuration.name}")
         val calculatorComponent = CalculatorComponent()
         environment.jersey().register(calculatorComponent)
