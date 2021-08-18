@@ -36,4 +36,8 @@ class CalculatorResource @Inject constructor(private val calculatorService: Calc
             throw e
         }
     }
+
+    companion object {
+
+    }
 }

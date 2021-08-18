@@ -3,6 +3,7 @@ package to.dev.example
 import io.dropwizard.Application
 import io.dropwizard.setup.Environment
 import to.dev.example.configuration.MoviesConfig
+import to.dev.example.resources.CalculatorResource
 import to.dev.example.service.CalculatorService
 import javax.ws.rs.GET
 import javax.ws.rs.Path
@@ -15,7 +16,7 @@ fun main(args: Array<String>) {
 class CalculatorApp : Application<MoviesConfig>() {
     override fun run(configuration: MoviesConfig, environment: Environment) {
         println("Running ${configuration.name}")
-        val calculatorComponent = CalculatorService()
-        environment.jersey().register(calculatorComponent)
+        val calculatorResource = CalculatorResource
+        environment.jersey().register(calculatorResource)
     }
 }
