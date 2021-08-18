@@ -14,9 +14,6 @@ import javax.ws.rs.core.MediaType
 @Path("/")
 class CalculatorResource @Inject constructor(private val calculatorService: CalculatorService){
     @RamlDescription("Addition")
-    @Path("/add")
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
     @RamlResponses(
         RamlResponse(
             status = 200,
@@ -26,6 +23,9 @@ class CalculatorResource @Inject constructor(private val calculatorService: Calc
             ]
         )
     )
+    @Path("/add")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     fun addition(@HeaderParam("a") a: Double, @HeaderParam("b") b: Double) : CalculatorResponse {
         try {
             val additionResponse = calculatorService.add(a, b)
