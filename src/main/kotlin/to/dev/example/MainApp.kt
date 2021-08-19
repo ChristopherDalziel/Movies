@@ -16,7 +16,6 @@ fun main(args: Array<String>) {
 class CalculatorApp : Application<MoviesConfig>() {
     override fun run(configuration: MoviesConfig, environment: Environment) {
         println("Running ${configuration.name}")
-        val calculatorResource = CalculatorResource
-        environment.jersey().register(calculatorResource)
+        environment.jersey().register(CalculatorResource(CalculatorService()))
     }
 }
