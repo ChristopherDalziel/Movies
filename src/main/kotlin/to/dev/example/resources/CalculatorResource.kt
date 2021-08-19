@@ -23,14 +23,37 @@ class CalculatorResource @Inject constructor(private val calculatorService: Calc
             ]
         )
     )
-    @Path("/add")
+    @Path("/addition")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     fun addition(@HeaderParam("a") a: Double, @HeaderParam("b") b: Double) : CalculatorResponse {
         try {
-            val additionResponse = calculatorService.add(a, b)
+            val additionResponse = calculatorService.addition(a, b)
 
             return CalculatorResponse(additionResponse)
+        } catch (e: Exception) {
+            log.error("there was an error")
+            throw e
+        }
+    }
+
+    @RamlDescription("Subtract")
+    @RamlResponses(
+        RamlResponse(
+            status = 200,
+            description = "Used to take value a from value b",
+            bodies = [
+                RamlBody(contentType = MediaType.APPLICATION_JSON, type = CalculatorResource::class)
+            ]
+        )
+    )
+    @Path("/subtract")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    fun subtraction(@HeaderParam("a") a: Double, @HeaderParam("b") b: Double) : CalculatorResponse {
+        try {
+            val subtractionResponse = calculatorService.subtract(a, b)
+            return CalculatorResponse(subtractionResponse)
         } catch (e: Exception) {
             log.error("there was an error")
             throw e

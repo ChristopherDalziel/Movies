@@ -5,15 +5,14 @@ import javax.ws.rs.Path
 import javax.ws.rs.QueryParam
 
 class CalculatorService {
-    fun add(a: Double, b: Double): Double {
+    fun addition(a: Double, b: Double): Double {
         return a + b
     }
 
-//    @Path("/subtract")
-//    @GET
-//    fun subtract(@QueryParam("a") a: Double, @QueryParam("b") b: Double): Double {
-//        return a - b
-//    }
+    fun subtract(a: Double, b: Double): Double {
+        return a - b
+    }
+
 //
 //    @Path("/multiply")
 //    @GET
