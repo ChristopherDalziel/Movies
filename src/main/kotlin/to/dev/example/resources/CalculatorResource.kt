@@ -26,7 +26,7 @@ class CalculatorResource @Inject constructor(private val calculatorService: Calc
     @Path("/addition")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun addition(@HeaderParam("a") a: Double, @HeaderParam("b") b: Double) : CalculatorResponse {
+    fun addition(@QueryParam("a") a: Double, @QueryParam("b") b: Double) : CalculatorResponse {
         try {
             val additionResponse = calculatorService.addition(a, b)
 
@@ -50,7 +50,7 @@ class CalculatorResource @Inject constructor(private val calculatorService: Calc
     @Path("/subtract")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun subtraction(@HeaderParam("a") a: Double, @HeaderParam("b") b: Double) : CalculatorResponse {
+    fun subtraction(@QueryParam("a") a: Double, @QueryParam("b") b: Double) : CalculatorResponse {
         try {
             val subtractionResponse = calculatorService.subtract(a, b)
             return CalculatorResponse(subtractionResponse)
