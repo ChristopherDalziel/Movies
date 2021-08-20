@@ -30,9 +30,9 @@ class MoviesResource @Inject constructor(private val moviesService: MoviesServic
     @Produces(MediaType.APPLICATION_JSON)
     fun getMovies(@PathParam("provider") provider: String ): MoviesResponse {
         try {
-            val response = moviesService.getMovies(provider)
-
-            return MoviesResponse(provider, response)
+//            TODO:
+//            val response = moviesService.getMovies(provider)
+//            return MoviesResponse(provider, response)
         } catch (e: Exception) {
             throw e
         }
