@@ -1,9 +1,12 @@
 package to.dev.example.service
 
-import to.dev.example.api.responses.MoviesResponse
+import to.dev.example.core.MoviesDAO
+import javax.inject.Inject
 
-class MoviesService {
-    fun getMovies(provider: String) {
-//        TODO
+class MoviesService @Inject constructor(
+    private val moviesDAO: MoviesDAO
+){
+    fun getMovies() {
+        return moviesDAO.test()
     }
 }

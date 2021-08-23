@@ -15,7 +15,8 @@ import javax.ws.rs.PathParam
 import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
 
-class MoviesResource @Inject constructor(private val moviesService: MoviesService) {
+@Path("/")
+class MoviesResource {
     @RamlDescription("Returns a list of movies from a provider")
     @RamlResponses(
         RamlResponse(
@@ -26,15 +27,10 @@ class MoviesResource @Inject constructor(private val moviesService: MoviesServic
             ]
         )
     )
+    @Path("/provider")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun getMovies(@PathParam("provider") provider: String ): MoviesResponse {
-        try {
-//            TODO:
-//            val response = moviesService.getMovies(provider)
-//            return MoviesResponse(provider, response)
-        } catch (e: Exception) {
-            throw e
-        }
+    fun getMovies(@PathParam("provider") provider: String ) {
+        return moviesService.getMovies()
     }
 }
