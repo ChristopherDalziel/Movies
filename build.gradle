@@ -10,22 +10,21 @@ mainClassName = "to.dev.example.MainAppKt"
 
 ext.dropwizard_version = '1.1.4'
 
-dependencies {
-    compile "io.dropwizard:dropwizard-core:$dropwizard_version"
-}
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile "io.dropwizard:dropwizard-core:$dropwizard_version"
+    compile 'dev.misfitlabs.kotlinguice4:kotlin-guice:1.5.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    // https://mvnrepository.com/artifact/org.assertj/assertj-core
-    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.6.1'
     implementation group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
     implementation 'net.ozwolf:dropwizard-raml-generator:3.0.1'
+    implementation 'ru.vyarus:dropwizard-guicey:5.3.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    // https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.6.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
 test {
