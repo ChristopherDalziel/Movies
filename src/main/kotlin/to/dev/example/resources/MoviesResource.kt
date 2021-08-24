@@ -4,10 +4,8 @@ import net.ozwolf.raml.annotations.RamlBody
 import net.ozwolf.raml.annotations.RamlDescription
 import net.ozwolf.raml.annotations.RamlResponse
 import net.ozwolf.raml.annotations.RamlResponses
-import to.dev.example.api.responses.Movies
 import to.dev.example.api.responses.MoviesResponse
 import to.dev.example.service.MoviesService
-import java.lang.Exception
 import javax.inject.Inject
 import javax.ws.rs.GET
 import javax.ws.rs.Path
@@ -16,7 +14,7 @@ import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
 
 @Path("/")
-class MoviesResource {
+class MoviesResource @Inject constructor(private val moviesService: MoviesService) {
     @RamlDescription("Returns a list of movies from a provider")
     @RamlResponses(
         RamlResponse(
