@@ -4,6 +4,7 @@ import net.ozwolf.raml.annotations.RamlBody
 import net.ozwolf.raml.annotations.RamlDescription
 import net.ozwolf.raml.annotations.RamlResponse
 import net.ozwolf.raml.annotations.RamlResponses
+import to.dev.example.api.responses.Movies
 import to.dev.example.api.responses.MoviesResponse
 import to.dev.example.service.MoviesService
 import javax.inject.Inject
@@ -25,10 +26,10 @@ class MoviesResource @Inject constructor(private val moviesService: MoviesServic
             ]
         )
     )
-    @Path("/provider")
+    @Path("/provider/{provider}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun getMovies(@PathParam("provider") provider: String ) {
+    fun getMovies(@PathParam("provider") provider: String ): MoviesResponse {
         return moviesService.getMovies()
     }
 }

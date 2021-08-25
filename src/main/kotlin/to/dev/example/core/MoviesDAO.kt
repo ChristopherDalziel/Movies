@@ -9,10 +9,10 @@ import javax.ws.rs.core.MediaType
 class MoviesDAO @Inject constructor(
     private val client: Client
 ) {
-    fun test() {
-        client.target("https://challenge.lexicondigital.com.au/api/filmworld/movies")
+    fun test(): MoviesResponse {
+        return client.target("https://challenge.lexicondigital.com.au/api/filmworld/movies")
             .request(MediaType.APPLICATION_JSON)
             .header("x-api-key", "")
-            .get()
+            .get(MoviesResponse::class.java)
     }
 }
