@@ -19,7 +19,6 @@ fun main(args: Array<String>) {
 
 class CalculatorApp : Application<MoviesConfig>() {
     override fun initialize(bootstrap: Bootstrap<MoviesConfig>) {
-        // dependency injection is awesome
         bootstrap.addBundle(
             GuiceBundle.builder()
                 .enableAutoConfig(javaClass.getPackage().name)
