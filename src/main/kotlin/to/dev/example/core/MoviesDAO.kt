@@ -1,5 +1,6 @@
 package to.dev.example.core
 
+import to.dev.example.api.responses.MovieResponse
 import to.dev.example.api.responses.MoviesResponse
 import javax.inject.Inject
 import javax.ws.rs.client.Client
@@ -13,5 +14,12 @@ class MoviesDAO @Inject constructor(
             .request(MediaType.APPLICATION_JSON)
             .header("x-api-key", System.getenv("x-api-key"))
             .get(MoviesResponse::class.java)
+    }
+
+    fun getMovie(provider: String, id: String): MovieResponse {
+        return client.target("https://challenge.lexicondigital.com.au/api/${provider}/movie/${id}")
+            .request(MediaType.APPLICATION_JSON)
+            .header("x-api-key", System.getenv("x-api-key"))
+            .get(MovieResponse::class.java)
     }
 }
