@@ -33,7 +33,7 @@ data class MoviesResponse (
 
 data class Movies (
     @JsonProperty(value = "ID", required = true)
-    var ID: String,
+    var id: String,
 
     @JsonProperty(value = "Title", required = true)
     var title: String,
