@@ -7,7 +7,7 @@ import javax.inject.Inject
 class MoviesService @Inject constructor(
     private val moviesDAO: MoviesDAO
 ){
-    fun getMovies(): MoviesResponse {
-        return moviesDAO.test()
+    fun getMovies(provider: String): MoviesResponse {
+        return moviesDAO.getMovies(provider)
     }
 }

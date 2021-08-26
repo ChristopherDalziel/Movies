@@ -30,6 +30,6 @@ class MoviesResource @Inject constructor(private val moviesService: MoviesServic
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     fun getMovies(@PathParam("provider") provider: String ): MoviesResponse {
-        return moviesService.getMovies()
+        return moviesService.getMovies(provider)
     }
 }
