@@ -5,8 +5,8 @@ run
 
 
 <h3>Postman Queries</h3>
-- Providers <br />
+Providers <br /> <br />
   - filmworld <br />
-  - cinemaworld <br />
-- Query <br />
-  - http://localhost:8080/provider/${provider}
+  - cinemaworld <br /> <br />
+Query <br /> <br />
+    - http://localhost:8080/provider/${provider}
