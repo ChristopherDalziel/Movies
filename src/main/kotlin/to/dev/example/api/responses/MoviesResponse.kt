@@ -14,11 +14,11 @@ import net.ozwolf.raml.annotations.RamlExample
 @JsonSchemaDescription("This method is used to return a list of movies related to a provider")
 data class MoviesResponse (
     @JsonProperty(value = "Provider", required = true)
-    @field:JsonPropertyDescription("provider")
+    @field:JsonPropertyDescription("Provider")
     val provider: String,
 
     @JsonProperty(value = "Movies", required = true)
-    @JsonPropertyDescription("list of movies")
+    @JsonPropertyDescription("List of movies")
     val movies: List<Movies>
 ) {
     companion object {
