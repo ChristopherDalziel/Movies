@@ -10,3 +10,4 @@ Providers <br /> <br />
 - cinemaworld <br /> <br />
 Query <br /> <br />
 - http://localhost:8080/provider/${provider}
+- http://localhost:8080/provider/${provider}/id/${id}
