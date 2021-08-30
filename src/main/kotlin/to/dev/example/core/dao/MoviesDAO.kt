@@ -1,4 +1,4 @@
-package to.dev.example.core
+package to.dev.example.core.dao
 
 import to.dev.example.api.responses.MovieResponse
 import to.dev.example.api.responses.MoviesResponse

@@ -5,13 +5,8 @@ import io.dropwizard.setup.Bootstrap
 import io.dropwizard.setup.Environment
 import ru.vyarus.dropwizard.guice.GuiceBundle
 import to.dev.example.configuration.MoviesConfig
-import to.dev.example.core.MoviesDAO
 import to.dev.example.modules.DefaultModule
-import to.dev.example.resources.CalculatorResource
 import to.dev.example.resources.MoviesResource
-import to.dev.example.service.CalculatorService
-import to.dev.example.service.MoviesService
-import javax.ws.rs.client.Client
 
 fun main(args: Array<String>) {
     CalculatorApp().run(*args)
