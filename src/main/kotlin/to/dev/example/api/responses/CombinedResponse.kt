@@ -18,6 +18,11 @@ data class CombinedResponse (
 
         )
 
+
+
+// Contains a list of movies where each movie has a list of provider objects
+// Where each provider object contains price and name of provider
+
 data class CombinedMovieProviders (
         @JsonProperty(value = "Provider", required = true)
         var provider: String,
