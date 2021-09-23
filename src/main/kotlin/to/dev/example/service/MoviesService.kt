@@ -15,25 +15,19 @@ class MoviesService @Inject constructor(
     }
 
 
-    // get movies from multiple providers combine
-//    p1 = [m1, m2, m3]
-//    p2  [m1, m6]
+    // get movies from multiple providers and combine
+    fun getMoviesFromProviders() {
+        // return data from all providers
+        // provider one = [movie1, movie 2, movie3]
+        // provider two = [movie1, movie6]
+    }
 
-    // combineProviders
+    fun combineProviders() {
+        // return a list of movies and their providers
+        // movies: { movie1 : { providers: { provider1: { price: '', poster: '' }, provider2: { price: '', poster: '' } } }
+    }
 
-//    movies: {
-//        m1: {
-//            providers: {
-//                p1: {
-//                    price: '',
-//                    poster: ''
-//                },
-//            p2: {
-//
-//        }
-//        }
-//        }
-//    }
+
 
     fun getMovie(provider: String, id: String): MovieResponse {
         return moviesDAO.getMovie(provider, id)
