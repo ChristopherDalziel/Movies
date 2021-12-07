@@ -9,7 +9,13 @@ import to.dev.example.modules.DefaultModule
 import to.dev.example.resources.MoviesResource
 
 fun main(args: Array<String>) {
-    CalculatorApp().run(*args)
+    println(args.joinToString { it })
+    val argsTwo = if(args.isNullOrEmpty()) {
+        arrayOf("server", "config/local.yaml")
+    } else {
+        args
+    }
+    CalculatorApp().run(*argsTwo)
 }
 
 class CalculatorApp : Application<MoviesConfig>() {

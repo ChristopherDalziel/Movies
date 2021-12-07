@@ -5,7 +5,6 @@ import net.ozwolf.raml.annotations.RamlDescription
 import net.ozwolf.raml.annotations.RamlResponse
 import net.ozwolf.raml.annotations.RamlResponses
 import to.dev.example.api.responses.MovieResponse
-import to.dev.example.api.responses.Movies
 import to.dev.example.api.responses.MoviesResponse
 import to.dev.example.service.MoviesService
 import javax.inject.Inject
@@ -13,7 +12,10 @@ import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.PathParam
 import javax.ws.rs.Produces
+import javax.ws.rs.core.Context
+import javax.ws.rs.core.HttpHeaders
 import javax.ws.rs.core.MediaType
+import javax.ws.rs.core.UriInfo
 
 @Path("/")
 class MoviesResource @Inject constructor(private val moviesService: MoviesService) {
@@ -30,8 +32,9 @@ class MoviesResource @Inject constructor(private val moviesService: MoviesServic
     @Path("/provider/{provider}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun getMovies(@PathParam("provider") provider: String ): MoviesResponse {
-        return moviesService.getMovies(provider)
+    fun getMovies(@PathParam("provider") provider: String, @Context headers: HttpHeaders): MoviesResponse {
+        val apiKey = headers.getHeaderString("x-api-key")
+        return moviesService.getMovies(provider, apiKey)
     }
 
     @Path("/provider/{provider}/id/{id}")
