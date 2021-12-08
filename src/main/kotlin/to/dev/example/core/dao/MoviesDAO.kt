@@ -17,6 +17,8 @@ class MoviesDAO @Inject constructor(
             .get(MoviesResponse::class.java)
     }
 
+
+
     fun getMovie(provider: String, id: String): MovieResponse {
         return client.target("https://challenge.lexicondigital.com.au/api/${provider}/movie/${id}")
             .request(MediaType.APPLICATION_JSON)
