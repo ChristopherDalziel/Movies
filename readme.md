@@ -1,11 +1,11 @@
 <h1>Movie Api [ Kotlin, DropWizard]</h1>
 
 <h2>Postman Queries</h2>
-1. localhost:8080/provider/${provider}
+1. localhost:8080/provider/${provider} <br /> <br />
 2. localhost:8080/id/${id}
 
 <h3>Providers and Provider Id's</h3>
-1. CinemaWorld // cw
+1. CinemaWorld // cw <br /> <br />
 2. FilmWorld // fw
 
 <h4>Problem </h4>
