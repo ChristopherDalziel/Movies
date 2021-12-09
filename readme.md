@@ -1,13 +1,13 @@
-<h2>Movie API - Kotlin [DropWizard]</h2>
+<h1>Movie Api [ Kotlin, DropWizard]</h1>
 
-run
-- Add `server config/local.yaml` to `program arguments` in `configurations`
+<h2>Postman Queries</h2>
+1. localhost:8080/provider/${provider}
+2. localhost:8080/id/${id}
 
+<h3>Providers and Provider Id's</h3>
+1. CinemaWorld // cw
+2. FilmWorld // fw
 
-<h3>Postman Queries</h3>
-Providers <br /> <br />
-- filmworld <br />
-- cinemaworld <br /> <br />
-Query <br /> <br />
-- http://localhost:8080/provider/${provider}
-- http://localhost:8080/provider/${provider}/id/${id}
+<h4>Problem </h4>
+External api's return Movie(s) data as seperate API calls we need to provide a combined response so it will be able to display it to our end user. <br />
+The secondary issue is that the api's randomly fail for unknown reasons. However we aren't currently solving this secondary problem here.
