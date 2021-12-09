@@ -15,10 +15,10 @@ fun main(args: Array<String>) {
     } else {
         args
     }
-    CalculatorApp().run(*argsTwo)
+    MovieApp().run(*argsTwo)
 }
 
-class CalculatorApp : Application<MoviesConfig>() {
+class MovieApp : Application<MoviesConfig>() {
     override fun initialize(bootstrap: Bootstrap<MoviesConfig>) {
         bootstrap.addBundle(
             GuiceBundle.builder()

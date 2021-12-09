@@ -37,11 +37,12 @@ class MoviesResource @Inject constructor(private val moviesService: MoviesServic
         return moviesService.getMovies(provider, apiKey)
     }
 
-    @Path("/provider/{provider}/id/{id}")
+    @Path("/id/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun getMovie(@PathParam("provider") provider: String, @PathParam("id") id: String): MovieResponse {
-        return moviesService.getMovie(provider, id)
+    fun getMovieV2(@PathParam("id") id: String, @Context headers: HttpHeaders): Any {
+        val apiKey = headers.getHeaderString("x-api-key")
+        return moviesService.getMovieV2(id, apiKey)
     }
 
 }

@@ -5,7 +5,6 @@ import to.dev.example.api.responses.MoviesResponse
 import javax.inject.Inject
 import javax.ws.rs.client.Client
 import javax.ws.rs.core.MediaType
-import javax.ws.rs.core.UriInfo
 
 class MoviesDAO @Inject constructor(
     private val client: Client
@@ -17,12 +16,10 @@ class MoviesDAO @Inject constructor(
             .get(MoviesResponse::class.java)
     }
 
-
-
-    fun getMovie(provider: String, id: String): MovieResponse {
-        return client.target("https://challenge.lexicondigital.com.au/api/${provider}/movie/${id}")
+    fun getMovie(provider: String, providerId: String, movieId: String, apiKey: String): MovieResponse {
+        return client.target("https://challenge.lexicondigital.com.au/api/${provider}/movie/${providerId}${movieId}")
             .request(MediaType.APPLICATION_JSON)
-            .header("x-api-key", System.getenv("x-api-key"))
+            .header("x-api-key", apiKey)
             .get(MovieResponse::class.java)
     }
 }
